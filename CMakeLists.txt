@@ -1,10 +1,12 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(jesajawasm VERSION 0.1.0)
-
+set(CMAKE_CXX_STANDARD 17)
 include(CTest)
 enable_testing()
-
-add_executable(jesajawasm main.cpp)
+file(GLOB front_sources CONFIGURE_DEPENDS src/front-end/*.cpp src/front-end/*.hpp)
+file(GLOB include_sources CONFIGURE_DEPENDS include/*.hpp)
+add_executable(jesajawasm main.cpp ${front_sources} ${include_sources})
+target_include_directories(jesajawasm PRIVATE ${CMAKE_SOURCE_DIR}/src/front-end)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

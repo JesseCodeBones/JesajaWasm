@@ -1,5 +1,7 @@
 #include <iostream>
+#include "include/jw.hpp"
 
 int main(int, char**) {
-    std::cout << "Hello, world!\n";
+    jw::Parser parser;
+    parser.parseFile("std::string src", "std::filesystem::path path");
 }
