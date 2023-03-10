@@ -3,5 +3,5 @@
 
 int main(int, char**) {
     jw::Parser parser;
-    parser.parseFile("std::string src", "std::filesystem::path path");
+    parser.parseFile("/home/jesse/workspace/JesajaWasm/test/lit/add.jw");
 }
