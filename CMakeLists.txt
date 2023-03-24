@@ -7,7 +7,7 @@ file(GLOB front_sources CONFIGURE_DEPENDS src/front-end/*.cpp src/front-end/*.hp
 file(GLOB include_sources CONFIGURE_DEPENDS include/*.hpp)
 add_executable(jesajawasm main.cpp ${front_sources} ${include_sources})
 target_include_directories(jesajawasm PRIVATE ${CMAKE_SOURCE_DIR}/src/front-end)
-
+add_subdirectory(test)
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
